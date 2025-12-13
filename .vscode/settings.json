@@ -1,0 +1,15 @@
+{
+  "cucumber.glue": [
+    "features/step_definitions/**/*.ts",
+    "features/hooks/**/*.ts",
+    "features/support/**/*.ts"
+  ],
+  "cucumber.features": ["features/**/*.feature"],
+  "[gherkin]": {
+    "editor.defaultFormatter": "cucumberopen.cucumber-official",
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}

@@ -1,0 +1,131 @@
+[
+  {
+    "description": "  As a user\n  I want to fill out an insurance quote form\n  So that I can submit a quote for automobile insurance",
+    "elements": [
+      {
+        "description": "",
+        "id": "insurance-quote-submission;complete-insurance-quote-workflow",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Complete insurance quote workflow",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2637075700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "user navigates to the insurance application",
+            "match": {
+              "location": "features\\step_definitions\\insurance.steps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6432152699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "user fills vehicle data",
+            "match": {
+              "location": "features\\step_definitions\\insurance.steps.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1005898099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "user fills insured data",
+            "match": {
+              "location": "features\\step_definitions\\insurance.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 995620400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "user fills insurance data",
+            "match": {
+              "location": "features\\step_definitions\\insurance.steps.ts:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 985400499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "user selects quote and policy",
+            "match": {
+              "location": "features\\step_definitions\\insurance.steps.ts:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 163286899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "user submits quote details",
+            "match": {
+              "location": "features\\step_definitions\\insurance.steps.ts:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6843156500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "quote should be submitted successfully",
+            "match": {
+              "location": "features\\step_definitions\\insurance.steps.ts:56"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5023684800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 781138699
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "insurance-quote-submission",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Insurance Quote Submission",
+    "tags": [],
+    "uri": "features\\insurance.feature"
+  }
+]
