@@ -7,6 +7,11 @@
     "test:headless": "cucumber-js --publish-quiet",
     "test:report": "cucumber-js --format json:reports/cucumber-report.json",
     "test:tags": "cucumber-js --tags",
+    "test:webkit": "npx playwright test Tricentisdemowebsite.spec.ts --headed --project=webkit",
+    "test:safari-macos": "BROWSERSTACK_USERNAME=$BROWSERSTACK_USERNAME BROWSERSTACK_ACCESS_KEY=$BROWSERSTACK_ACCESS_KEY npx playwright test --config=playwright-browserstack.config.ts --project='Safari-macOS-BrowserStack'",
+    "test:chrome-macos": "BROWSERSTACK_USERNAME=$BROWSERSTACK_USERNAME BROWSERSTACK_ACCESS_KEY=$BROWSERSTACK_ACCESS_KEY npx playwright test --config=playwright-browserstack.config.ts --project='Chrome-macOS-BrowserStack'",
+    "test:iphone-safari": "BROWSERSTACK_USERNAME=$BROWSERSTACK_USERNAME BROWSERSTACK_ACCESS_KEY=$BROWSERSTACK_ACCESS_KEY npx playwright test --config=playwright-browserstack.config.ts --project='iPhone-Safari-BrowserStack'",
+    "setup:browserstack": "node setup-browserstack.js",
     "generate-pdf": "node generate-screenshot-pdf.js"
   },
   "keywords": [],
