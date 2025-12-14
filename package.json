@@ -19,6 +19,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/pdf-parse": "^1.1.5",
+    "pdf-parse": "^2.4.5",
+    "pdf2json": "^4.0.0",
     "pdfkit": "^0.13.0",
     "sqlite3": "^5.1.7"
   },
