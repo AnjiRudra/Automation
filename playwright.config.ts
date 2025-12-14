@@ -50,8 +50,8 @@ export default defineConfig({
     {
       name: 'webkit',
       use: { 
-        ...devices['Desktop Safari'],
-        viewport: { width: 1920, height: 1200 },
+        browserName: 'webkit',
+        viewport: { width: 1920, height: 1080 },
       },
     },
 

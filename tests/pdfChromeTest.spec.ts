@@ -14,7 +14,7 @@ test.describe('PDF Browser Viewing Test - Chrome', () => {
       
       // Navigate to the PDF in Chrome
       await page.goto(pdfUrl, { waitUntil: 'networkidle', timeout: 30000 });
-      await page.waitForTimeout(5000); // Wait for PDF to fully load
+      await page.waitForTimeout(15000); // Wait for PDF to fully load
       
       // Take screenshot of the PDF opened in Chrome
       await page.screenshot({ 

@@ -11,6 +11,12 @@ import { InsuranceDatabase } from './helpers/InsuranceDatabase';
 
 let insuranceDb: InsuranceDatabase;
 
+test.beforeEach(async ({ page }, testInfo) => {
+  if (testInfo.project.name === 'webkit') {
+    await page.setViewportSize({ width: 1920, height: 1080 });
+  }
+});
+
 test.beforeAll(async () => {
   // Initialize database
   insuranceDb = new InsuranceDatabase();
@@ -27,9 +33,6 @@ test.afterAll(async () => {
 test('Insurance Quote Form - Complete Workflow with Database', async ({ page }) => {
   // Set timeout for the entire test
   test.setTimeout(120000); // 2 minutes
-
-  // Set fullscreen viewport
-  await page.setViewportSize({ width: 1920, height: 1080 });
 
   // Load test data from CSV
   const csvPath = path.join(__dirname, 'testdata.csv');

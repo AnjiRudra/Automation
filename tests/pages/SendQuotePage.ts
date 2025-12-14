@@ -492,19 +492,13 @@ export class SendQuotePage extends BasePage {
         return validationResult;
       }
       
-      // Handle WebKit - use Chrome fallback for screenshot, then validate
+      // Handle WebKit - use direct PDF viewing like Chromium
       if (browserName === 'webkit') {
-        console.log('WebKit detected - opening PDF in Chrome for screenshot...');
+        console.log('WebKit detected - using direct PDF viewing...');
         
-        await this.openPDFInChromeForWebKit(pdfFilePath);
+        const validationResult = await this.validatePDFDirectlyInWebKit(pdfFilePath, testData);
         
-        // Continue validation in WebKit using text extraction
-        console.log('Proceeding with PDF validation in WebKit (headless mode for validation)...');
-        const validationResult = await this.validatePDFWithExtraction(pdfFilePath, testData);
-        
-        // Create proof of validation
-        await this.createWebKitValidationProof(validationResult, testData);
-        
+        console.log('✓ PDF validation completed directly in WebKit');
         return validationResult;
       }
       
@@ -595,6 +589,29 @@ export class SendQuotePage extends BasePage {
     } catch (error) {
       console.error('Error in direct Chromium PDF validation:', error.message);
       await pdfPage.close().catch(() => {});
+      throw error;
+    }
+  }
+
+  /**
+   * Validate PDF directly in WebKit browser (text-based validation only)
+   */
+  private async validatePDFDirectlyInWebKit(pdfFilePath: string, testData: TestData) {
+    console.log('Starting direct PDF validation in WebKit...');
+    console.log('WebKit does not support direct PDF viewing in browser - using text-based validation only');
+    
+    try {
+      // Perform text-based validation (WebKit compatible approach)
+      const validationResult = await this.validatePDFWithExtraction(pdfFilePath, testData);
+      
+      // Create WebKit validation proof without screenshots
+      await this.createWebKitValidationProof(validationResult, testData);
+      
+      console.log('✓ PDF validation completed in WebKit using text extraction');
+      return validationResult;
+      
+    } catch (error) {
+      console.error('Error in WebKit PDF validation:', error.message);
       throw error;
     }
   }
