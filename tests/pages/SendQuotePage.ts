@@ -31,8 +31,8 @@ export class SendQuotePage extends BasePage {
       
       // Click on "Select Price Option" tab to go back to Step 5
       await this.page.locator('text=Select Price Option').click();
-      await this.page.waitForLoadState('domcontentloaded');
-      await this.page.waitForTimeout(100);
+      // await this.page.waitForLoadState('domcontentloaded');
+      await this.page.waitForTimeout(1000);
       
       // Import QuotePolicyPage to handle selection
       const { QuotePolicyPage } = await import('./QuotePolicyPage');

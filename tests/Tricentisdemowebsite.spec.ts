@@ -70,24 +70,24 @@ test('Insurance Quote Form - Complete Workflow with Database', async ({ page }) 
   console.log(`✓ Quote downloaded to: ${downloadPath}`);
 
   // Re-verify and re-select the product after download to ensure it's still selected
-  await quotePage.selectProduct('Ultimate');
-  
-
+  // await quotePage.selectProduct('Ultimate');
   
   await page.screenshot({ path: './screenshots/05-quote-policy.png' });
-  await quotePage.clickNext();
+  // await quotePage.clickNext();
 
   // Workaround for application issue: Go back to Step 5 and navigate to Step 6 again
   console.log('Applying workaround: Going back to Step 5 and re-navigating to Step 6...');
   
   // Go back to Step 5 (Select Price Option)
-  await page.goBack();
-  await page.waitForLoadState('networkidle');
-  await page.waitForTimeout(2000);
+ // await page.goBack();
+  // await page.waitForLoadState('networkidle');
+  
+
+  //await page.waitForTimeout(2000);
   
   // Re-select the product to ensure it's still selected
-  await quotePage.selectProduct('Ultimate');
-  await page.waitForTimeout(1000);
+  //await quotePage.selectProduct('Ultimate');
+ // await page.waitForTimeout(1000);
   
   // Navigate to Step 6 again
   await quotePage.clickNext();

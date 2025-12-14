@@ -159,7 +159,7 @@ export class QuotePolicyPage extends BasePage {
             }
           }
         }
-        await this.page.waitForTimeout(500);
+      //  await this.page.waitForTimeout(500);
       }
 
       return filepath;
